@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>想提桶跑路立讯电子</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style></style>
+</head>
+<body>
+
+     <div id="root">
+     <h1>hello,{{name}},{{address}},{{Date.now()}}</h1>
+     </div>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        new Vue({
+            el:'#root',
+            // el:document.getElementById('root');
+            data:{
+                name:'尚硅谷',
+                address:'北京'
+            }
+        })
+    </script>
+</body>
+</html>
