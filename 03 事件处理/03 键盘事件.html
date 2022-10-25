@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>想提桶跑路立讯电子</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style></style>
+</head>
+<body>
+     <div id="root">
+         <h2>欢迎来到{{name}}学习</h2>
+         <input type="text" placeholder="按下回车提示输入" @keyup.ctrl.y="showInfo">
+     </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#root',
+            data:{
+                name:'尚硅谷'
+            },
+            methods:{
+                showInfo(e) {
+                    // if (e.keyCode!==13) return
+                        console.log(e.target.value);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

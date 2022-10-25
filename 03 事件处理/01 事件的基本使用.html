@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>想提桶跑路立讯电子</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style></style>
+</head>
+<body>
+<div id="root">
+    <h2>欢迎来到{{name}}学习</h2>
+    <button v-on:click="showInfo1">点我提示信息1</button>
+    <button v-on:click="showInfo2($event,66)">点我提示信息2</button>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm=new Vue({
+        el: '#root',
+        data: {
+            name: '尚硅谷'
+        },
+        methods: {
+            // showInfo1:(event)=>{
+                // alert('同学你好')
+                // console.log(event.target.innerText);
+                // console.log(this===vm);
+        // console.log(this);
+        //     }
+
+            showInfo2:(event,number)=>{
+                console.log(event,number);
+                alert('拿走吧各位');
+            }
+        }
+    })
+</script>
+</body>
+</html>

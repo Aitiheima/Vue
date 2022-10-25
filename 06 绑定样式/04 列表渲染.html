@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>想提桶跑路立讯电子</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style></style>
+</head>
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <ul>
+            <li v-for="(p,index) of persons":key="index">
+               {{p.name}}---{{p.age}}
+            </li>
+        </ul>
+
+        <h2>汽车信息</h2>
+        <ul>
+            <li v-for="(value,k) of car" :key="k">
+                {{k}}---{{value}}
+            </li>
+        </ul>
+
+        <h2>hello</h2>
+        <ul>
+            <li v-for="(value,k) of str" :key="index">
+                {{k}}---{{value}}
+            </li>
+        </ul>
+
+        <h2>5</h2>
+        <ul>
+            <li v-for="(value,k) of number" :key="index">
+                {{k}}---{{value}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#root',
+            data:{
+                persons:[
+                    {id:'001',name:'张三',age:18},
+                    {id:'002',name:'李四',age:19},
+                    {id:'003',name:'王武',age:20}
+                ],
+                car:{
+                    name:'奥迪',
+                    price:'70万',
+                    color:'黑色'
+                },
+                str:'hello',
+                number:5
+            }
+        })
+</script>
+</html>

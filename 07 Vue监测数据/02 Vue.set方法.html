@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>想提桶跑路立讯电子</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style></style>
+</head>
+<body>
+    <div id="root">
+        <h2>学校名称:{{name}}</h2>
+        <h2>学校地址:{{address}}</h2>
+        <hr>
+        <h2>学生姓名:{{student.name}}</h2>
+        <h2>学生年龄: 真实：{{student.age.rAge}},对外：{{student.age.sAge}}</h2>
+        <h2>朋友们</h2>
+        <ul>
+            <li v-for="f in student.friends" :key="index"></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    let data={
+        name:'尚硅谷',
+        address:'北京',
+        student:{
+            name:'tom',
+            age:{
+                rAge:40,
+                sAge:29
+            },
+            friends:[
+                {name:'jerry',age:35}
+            ]
+
+        }
+    };
+
+    const obs=new Observer(data);
+    console.log(obs);
+
+    let vm={};
+    vm._data=data=obs;
+    function Observer(obj){
+        const keys=Object.keys(obj);
+        keys.forEach((k)=>{
+            Object.defineProperty(this,k,{
+                get(){
+                    return obj[k]
+                },
+                set(val){
+                    console.log(`${k}被改了，我要去解析模板，我要开始忙了`);
+                    obj[k]=val;
+                }
+            })
+        })
+    }
+</script>
+</html>
